@@ -39,25 +39,25 @@ This command creates the `dist/` folder:
 
         $ poetry build
 
-This command downloads the dependency files from the just created .whl file, along with the lambda_handler function in ``cumulus_granule_to_cnm/cumulus_granule_to_cnm.py``, and places them in the ``package`` folder:
+This command downloads the dependency files from the just created .whl file, along with the lambda_handler function in `cumulus_granule_to_cnm/cumulus_granule_to_cnm.py`, and places them in the `package` folder:
 
         $ poetry run pip install --upgrade -t package dist/*.whl
 
-Note that **boto3** and **moto** are not being pulled in. I've specifically excluded them via having them as ``tool.poetry.dev-dependencies`` only (via the ``pyproject.toml`` file)
+Note that **boto3** and **moto** are not being pulled in. I've specifically excluded them via having them as `tool.poetry.dev-dependencies` only (via the `pyproject.toml` file)
 
 The last command used is:
 
         $ cd package ; zip -r ../artifact.zip . -x '*.pyc'
 
-Which zips and creates the ``artifact.zip`` file, containing all files found in ``package/`` excluding .pyc files
+Which zips and creates the `artifact.zip` file, containing all files found in `package/` excluding .pyc files
 
 
 ### Executing program
 
-Upload ``artifact.zip`` to any location you plan to use it
+Upload `artifact.zip` to any location you plan to use it
 
-* Upload directly as a lambda with ``aws lambda update-function-code``
-* Upload to your AWS S3 ``lambdas/`` folder so that your Cumulus Terraform Build can use it
+* Upload directly as a lambda with `aws lambda update-function-code`
+* Upload to your AWS S3 `lambdas/` folder so that your Cumulus Terraform Build can use it
 
 NOTE: This AWS Lambda Function is intended to be used as a cumulus task and this requires `provider` and `provider_path` inputs from the `task_config`:
 
