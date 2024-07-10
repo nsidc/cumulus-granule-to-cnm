@@ -39,7 +39,7 @@ This command creates the `dist/` folder:
 
         $ poetry build
 
-This command downloads the dependency files from the just created .whl file, along with the lambda_handler function in ``cumulus_publish_cnm/cumulus_publish_cnm.py``, and places them in the ``package`` folder:
+This command downloads the dependency files from the just created .whl file, along with the lambda_handler function in ``cumulus_granule_to_cnm/cumulus_granule_to_cnm.py``, and places them in the ``package`` folder:
 
         $ poetry run pip install --upgrade -t package dist/*.whl
 
