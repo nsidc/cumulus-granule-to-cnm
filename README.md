@@ -52,7 +52,7 @@ The last command used is:
 Which zips and creates the `artifact.zip` file, containing all files found in `package/` excluding .pyc files
 
 
-### Executing program
+### Running the Lambda
 
 Upload `artifact.zip` to any location you plan to use it
 
